@@ -43,8 +43,7 @@ async def ytdl(format: str, link: str):
 async def play(c: Client, m: Message):
     await m.delete()
     do = requests.get(f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@{UPDATES_CHANNEL}&user_id={m.from_user.id}").text
-    if do.count("left") or do.count("Bad Request: user not found"):
-        await m.reply_text(f"")
+    if do.count("left") or do.count("Bad Request: user not found")
     else:
         replied = m.reply_to_message
         chat_id = m.chat.id
